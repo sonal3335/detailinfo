@@ -1,0 +1,221 @@
+
+
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+<title>Registration Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+
+
+</head>
+<body>
+<form name="registration" action="#"  autocomplete="off" onsubmit="validation()">
+
+
+<h1>Please Fill Your Details</h1>
+<div>
+<table  cellspacing="5" align="center">
+
+<tr><td><input type="text" id="user" placeholder="Enter your name">
+<br><span id="userr"></span>
+</td></tr>
+
+<tr><td><input type="text" id="email" placeholder="Enter your email">
+<br><span id="mailid"></span>
+</td></tr>
+
+<tr><td>
+<label>Gender::</label><input type="radio" name="gender" value="male" id="r1">Male
+<input type="radio" name="gender" value="female" id="r2">Female
+<br><span id="gen"></span>
+</td></tr>
+
+<tr><td>
+
+<select name="Education Details"  id="education"  value="Education Details">
+  <option>B.E|B.Tech</option>
+  <option>BCA|MCA</option>
+  <option>Diploma</option>
+  <option>HSC</option>
+  <option>SSC</option>
+</select>
+<br><span id="educationn"></span>
+</td></tr>
+
+<tr><td>
+<label>Year</label>::<input type="text" id="year">
+<br><span id="yearr"></span>
+</td></tr>
+
+<tr><td>
+<label>Grade/%</label>::<input type="text" id="grade">
+<br><span id="gradee"></span>
+</td></tr>
+
+
+
+
+<tr><td><input type="textarea" id="address" placeholder="Enter your Address">
+<br><span id="add"></span>
+</td></tr>
+
+<tr><td><input type="text" id="mobile" placeholder="Enter your phoneno">
+<br><span id="mobilee"></span>
+</td></tr>
+
+<tr><td><input type="text" id="skills" placeholder="Enter your skills">
+<br><span id="skillss"></span>
+</td></tr>
+
+<tr><td><input type="text" id="hobbies" placeholder="Enter Your Hobbies">
+<br><span id="hoby"></span>
+<tr><td>
+
+
+<tr><td>
+<input type="text" id="imglink" placeholder="link to your online photo">
+<a href="https://cdn.pixabay.com/photo/2016/02/19/15/46/labrador-retriever-1210559__480.jpg">Click here</a>
+</tr></td>
+
+
+ <tr><td> <button onclick="validation()"  id="btn">Submit
+        
+    </button><tr><td>
+
+</form>
+
+<script type="text/javascript">
+
+
+function  validation()
+{
+         var user = document.getElementById('user').value;
+		 var email = document.getElementById('email').value;
+		 var address = document.getElementById('address').value;
+		  var mobile = document.getElementById('mobile').value;
+		  var hobbies = document.getElementById('hobbies').value;
+		  var year= document.getElementById('year').value;
+		 
+		 if(user=="")
+		 {
+		 
+		     var user= document.getElementById('userr').innerHTML="**username can't be empty";
+			 
+		 }
+		 else if(user.length<4){
+		 
+		 var user= document.getElementById('userr').innerHTML="**username can't be less than 4";
+		     
+		 }
+		 else{
+		        var user= document.getElementById('userr').innerHTML="user name accepted";
+		 }
+		 
+		
+   
+  
+		  
+var atposition=email.indexOf("@");  
+var dotposition=email.lastIndexOf(".");  
+
+
+if(email==""||email=='null'){
+var email = document.getElementById('mailid').innerHTML="**please enter your email";
+}
+else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length)
+{  
+ var email = document.getElementById('mailid').innerHTML="**Invalid email";
+  
+  } 
+  else{
+  
+   var email = document.getElementById('mailid').innerHTML="accepted";
+  }
+  
+    
+
+  if(address=="")
+{
+var address = document.getElementById('add').innerHTML="***can't be empty ";
+}
+  
+ else if(address.length<4)
+{
+     
+ var address = document.getElementById('add').innerHTML="***Address should be atleast 10 characters ";
+  
+}
+
+else{
+		        var address= document.getElementById('add').innerHTML="accepted";
+		 }
+	
+
+        
+        
+		
+		if (isNaN(mobile))
+		{  
+ var mobile= document.getElementById("mobilee").innerHTML="***Enter Numeric value only";  
+  
+}
+if (isNaN(year))
+		{  
+ var mobile= document.getElementById("yearr").innerHTML="***Enter Numeric value only";  
+  
+}
+
+
+
+
+}
+
+
+/*
+function fetch(){
+
+
+          var user = document.getElementById('user').value;
+		 var email = document.getElementById('email').value;
+		 var address = document.getElementById('address').value;
+		  var mobile = document.getElementById('mobile').value;
+		   var hobbies = document.getElementById('hobbies').value;
+            var year = document.getElementById('year').value;
+
+
+
+
+
+
+document.write("Your Information:<br>"+"Full Name:"+user+"<br>");
+
+document.write("EmailId:"+email+"<br>");
+
+
+
+
+document.write("Address:"+address+"<br>");
+document.write("Mobileno:"+mobile+"<br>");
+
+
+document.write("Year:"+year+"<br>");
+  } 
+  
+  
+	function callBoth()
+{
+
+     validation();
+	fetch();
+}
+
+*/
+ 
+ 
+</script>
+</body>
+</html>
+
